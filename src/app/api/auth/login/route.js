@@ -40,7 +40,7 @@ export async function POST(request) {
     if (result instanceof Response) return result
     return new Response(null, { status })
   } catch (err) {
-    return new Response(JSON.stringify({ error: err.message }), {
+    return new Response(JSON.stringify({ error: err.message, stack: err.stack }), {
       status: 500,
       headers: { 'content-type': 'application/json' }
     })
