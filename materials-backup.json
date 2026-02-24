@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "Test Factory Material A",
+    "sku": "FAC-A-001",
+    "unit": "pcs",
+    "type": "factory",
+    "stock": 100,
+    "createdBy": "seed",
+    "createdAt": "2025-12-28T10:19:35.569Z",
+    "updatedAt": "2025-12-28T10:19:35.569Z"
+  },
+  {
+    "id": 2,
+    "name": "Test Factory Material B",
+    "sku": "FAC-B-001",
+    "unit": "kg",
+    "type": "factory",
+    "stock": 50,
+    "createdBy": "seed",
+    "createdAt": "2025-12-28T10:19:35.569Z",
+    "updatedAt": "2025-12-28T10:19:35.569Z"
+  }
+]

@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --border-radius: var(--mui-shape-borderRadius);
+  --border-color: var(--mui-palette-divider);
+  --primary-color: var(--mui-palette-primary-main);
+  --background-color: var(--mui-palette-background-default);
+  --background-color-rgb: var(--mui-palette-background-paperChannel);
+  --header-height: 54px;
+  --header-z-index: var(--mui-zIndex-appBar);
+  --footer-z-index: 10;
+  --customizer-z-index: var(--mui-zIndex-drawer);
+  --search-z-index: var(--mui-zIndex-tooltip);
+  --drawer-z-index: var(--mui-zIndex-drawer);
+  --backdrop-color: rgb(var(--mui-mainColorChannels-light) / 0.5);
+  --mui-mainColorChannels-shadow: var(--mui-mainColorChannels-lightShadow);
+}
+
+[data-dark] {
+  --backdrop-color: rgb(23 25 37 / 0.6);
+  --mui-mainColorChannels-shadow: var(--mui-mainColorChannels-darkShadow);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border-width: 0;
+  border-style: solid;
+  border-color: theme('borderColor.DEFAULT', currentColor);
+}
+
+html {
+  display: flex;
+  inline-size: 100%;
+  min-block-size: 100%;
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Increase font sizes globally */
+h1,
+.MuiTypography-h1 {
+  font-size: 2.5rem !important;
+}
+h2,
+.MuiTypography-h2 {
+  font-size: 2rem !important;
+}
+h3,
+.MuiTypography-h3 {
+  font-size: 1.75rem !important;
+}
+h4,
+.MuiTypography-h4 {
+  font-size: 1.5rem !important;
+}
+h5,
+.MuiTypography-h5 {
+  font-size: 1.25rem !important;
+}
+h6,
+.MuiTypography-h6 {
+  font-size: 1.1rem !important;
+}
+p,
+.MuiTypography-body1 {
+  font-size: 1rem !important;
+}
+.MuiTypography-body2 {
+  font-size: 0.95rem !important;
+}
+.MuiTypography-caption {
+  font-size: 0.85rem !important;
+}
+
+/* Table font sizes */
+.MuiTableCell-root {
+  font-size: 0.95rem !important;
+}
+.MuiTableCell-head {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+}
+
+/* Button font sizes */
+.MuiButton-root {
+  font-size: 0.95rem !important;
+}
+
+/* Input font sizes */
+.MuiInputBase-input {
+  font-size: 1rem !important;
+}
+.MuiInputLabel-root {
+  font-size: 1rem !important;
+}
+
+/* Card titles */
+.MuiCardHeader-title {
+  font-size: 1.25rem !important;
+}
+.MuiCardHeader-subheader {
+  font-size: 0.95rem !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul:not([class]) {
+  margin-block: 1rem;
+  padding-inline-start: 40px;
+}
+
+/*! Do not remove the following styles */
+/*
+  Fix the popout / submenu closing issue when using hover trigger to open the menu and using
+  perfectscrollbar where the bridge create with safe polygon by floating ui was not working
+*/
+[data-floating-ui-safe-polygon] .scrollbar-container {
+  pointer-events: auto;
+}
+[data-floating-ui-safe-polygon] .scrollbar-container .ps__rail-y {
+  pointer-events: none;
+}
+
+.ps__rail-y {
+  inset-inline-end: 0 !important;
+  inset-inline-start: auto !important;
+  & .ps__thumb-y {
+    inset-inline-end: 3px !important;
+    inset-inline-start: auto !important;
+    background-color: var(--mui-palette-divider);
+    inline-size: 6px;
+    &:hover,
+    &:focus,
+    &.ps--clicking {
+      background-color: var(--mui-palette-action-disabled) !important;
+    }
+  }
+  &:hover,
+  &:focus,
+  &.ps--clicking {
+    background-color: var(--mui-palette-action-hover) !important;
+  }
+  &:hover,
+  &:focus,
+  &.ps--clicking {
+    .ps__thumb-y {
+      background-color: var(--mui-palette-action-disabled) !important;
+    }
+  }
+}
+
+.ts-vertical-nav-root {
+  .ps__thumb-y {
+    inline-size: 4px;
+    &:hover,
+    &:focus,
+    &.ps--clicking {
+      inline-size: 6px;
+    }
+  }
+  .ps__rail-y {
+    inline-size: 10px;
+    &:hover,
+    &:focus,
+    &.ps--clicking {
+      background-color: transparent !important;
+      .ps__thumb-y {
+        inline-size: 6px;
+      }
+    }
+  }
+}
+
+:where([class^='tabler-']) {
+  font-size: 1.5rem;
+}
+
+/* Fix width issue for the input-otp component */
+input[autocomplete='one-time-code'][data-input-otp='true'] {
+  inline-size: 100% !important;
+}
+
+code {
+  font-family: inherit;
+  padding-block: 2px;
+  padding-inline: 4px;
+  border-radius: 4px;
+  font-size: 90%;
+  color: var(--mui-palette-info-main);
+  background-color: rgb(var(--mui-palette-info-mainChannel) / 0.08);
+  border: 0;
+}
+
+/* RTL Support Styles */
+html[dir='rtl'] {
+  text-align: right;
+}
+
+html[dir='rtl'] .text-left {
+  text-align: right !important;
+}
+
+html[dir='rtl'] .text-right {
+  text-align: left !important;
+}
+
+/* Fix table headers alignment for RTL */
+html[dir='rtl'] th,
+html[dir='rtl'] td {
+  text-align: right;
+}
+
+/* Fix input placeholder alignment */
+html[dir='rtl'] input::placeholder,
+html[dir='rtl'] textarea::placeholder {
+  text-align: right;
+}
+
+/* Fix icon spacing in RTL */
+html[dir='rtl'] .tabler-arrow-left::before {
+  content: '\eb3d'; /* arrow-right */
+}
+
+html[dir='rtl'] .tabler-arrow-right::before {
+  content: '\eb39'; /* arrow-left */
+}
+
+/* Fix flexbox gap for RTL */
+html[dir='rtl'] .flex-row-reverse {
+  flex-direction: row;
+}
+
+/* Arabic text optimization */
+html[lang='ar'] {
+  font-feature-settings: 'kern' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure proper number display */
+html[dir='rtl'] .ltr-nums {
+  direction: ltr;
+  unicode-bidi: embed;
+}

@@ -1,0 +1,2691 @@
+/* ============================================
+   Ahd Steel  - PREMIUM ANIMATIONS & EFFECTS
+   ============================================ */
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleInBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(0, 136, 204, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 0 25px rgba(0, 136, 204, 0.8),
+      0 0 50px rgba(0, 136, 204, 0.4);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(0, 136, 204, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(0, 136, 204, 0.6),
+      0 0 30px rgba(0, 136, 204, 0.4);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatRotate {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(-2deg);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes borderGlow {
+  0%,
+  100% {
+    border-color: rgba(0, 136, 204, 0.3);
+  }
+  50% {
+    border-color: rgba(0, 136, 204, 1);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.1);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotate(-180deg) scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes flipIn {
+  from {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(400px) rotateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomInOut {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* ============================================
+   LOGO ANIMATIONS
+   ============================================ */
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(-2deg);
+  }
+}
+
+@keyframes logoGlow {
+  0% {
+    filter: drop-shadow(0 4px 15px rgba(0, 136, 204, 0.3));
+  }
+  100% {
+    filter: drop-shadow(0 4px 25px rgba(0, 186, 209, 0.7));
+  }
+}
+
+@keyframes logoPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.logo-container {
+  transition: all 0.4s ease !important;
+}
+
+.logo-container:hover .logo-image,
+.logo-container:hover .animate-logo {
+  transform: scale(1.2) rotate(10deg) !important;
+  filter: drop-shadow(0 8px 30px rgba(0, 136, 204, 0.8)) !important;
+  animation: logoPulse 0.6s ease-in-out !important;
+}
+
+.logo-image {
+  animation:
+    logoFloat 4s ease-in-out infinite,
+    logoGlow 3s ease-in-out infinite alternate;
+}
+
+/* ============================================
+   MEGA PARTICLE EFFECTS
+   ============================================ */
+@keyframes particleFloat {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) rotate(90deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-40px) translateX(-10px) rotate(180deg);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateY(-20px) translateX(5px) rotate(270deg);
+    opacity: 1;
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes meteor {
+  0% {
+    transform: translateX(0) translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-300px) translateY(300px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes morphBlob {
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  50% {
+    border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%;
+  }
+  75% {
+    border-radius: 60% 40% 60% 30% / 70% 30% 50% 60%;
+  }
+}
+
+@keyframes neonFlicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow:
+      0 0 5px #0088cc,
+      0 0 10px #0088cc,
+      0 0 20px #0088cc,
+      0 0 40px #00bad1;
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+@keyframes glitch {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes borderDance {
+  0% {
+    border-color: #0088cc;
+  }
+  25% {
+    border-color: #00bad1;
+  }
+  50% {
+    border-color: #28c76f;
+  }
+  75% {
+    border-color: #ff9f43;
+  }
+  100% {
+    border-color: #0088cc;
+  }
+}
+
+@keyframes rainbowGlow {
+  0% {
+    box-shadow: 0 0 20px #0088cc;
+  }
+  20% {
+    box-shadow: 0 0 20px #00bad1;
+  }
+  40% {
+    box-shadow: 0 0 20px #28c76f;
+  }
+  60% {
+    box-shadow: 0 0 20px #ff9f43;
+  }
+  80% {
+    box-shadow: 0 0 20px #ff4c51;
+  }
+  100% {
+    box-shadow: 0 0 20px #0088cc;
+  }
+}
+
+@keyframes textGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes swing {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: top center;
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes rubberBand {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes jello {
+  0%,
+  11.1%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  22.2% {
+    transform: skewX(-12.5deg) skewY(-12.5deg);
+  }
+  33.3% {
+    transform: skewX(6.25deg) skewY(6.25deg);
+  }
+  44.4% {
+    transform: skewX(-3.125deg) skewY(-3.125deg);
+  }
+  55.5% {
+    transform: skewX(1.5625deg) skewY(1.5625deg);
+  }
+  66.6% {
+    transform: skewX(-0.78125deg) skewY(-0.78125deg);
+  }
+  77.7% {
+    transform: skewX(0.390625deg) skewY(0.390625deg);
+  }
+  88.8% {
+    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+  }
+}
+
+@keyframes tada {
+  0%,
+  100% {
+    transform: scale3d(1, 1, 1) rotate3d(0, 0, 0, 0deg);
+  }
+  10%,
+  20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%,
+  60%,
+  80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+}
+
+@keyframes headShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  6.5% {
+    transform: translateX(-6px) rotateY(-9deg);
+  }
+  18.5% {
+    transform: translateX(5px) rotateY(7deg);
+  }
+  31.5% {
+    transform: translateX(-3px) rotateY(-5deg);
+  }
+  43.5% {
+    transform: translateX(2px) rotateY(3deg);
+  }
+  50% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg);
+  }
+  15% {
+    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+  30% {
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+  45% {
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+  60% {
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+  75% {
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomInBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lightSpeedIn {
+  from {
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+  60% {
+    transform: skewX(20deg);
+    opacity: 1;
+  }
+  80% {
+    transform: skewX(-5deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes rollIn {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes flipInX {
+  from {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+  }
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+  to {
+    transform: perspective(400px);
+  }
+}
+
+@keyframes flipInY {
+  from {
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    opacity: 0;
+  }
+  40% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+  }
+  60% {
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+  to {
+    transform: perspective(400px);
+  }
+}
+
+@keyframes rotateInDownLeft {
+  from {
+    transform-origin: left bottom;
+    transform: rotate3d(0, 0, 1, -45deg);
+    opacity: 0;
+  }
+  to {
+    transform-origin: left bottom;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes hinge {
+  0% {
+    transform-origin: top left;
+    animation-timing-function: ease-in-out;
+  }
+  20%,
+  60% {
+    transform: rotate3d(0, 0, 1, 80deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out;
+  }
+  40%,
+  80% {
+    transform: rotate3d(0, 0, 1, 60deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 700px, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    transform: scale(0.1) rotate(30deg);
+    transform-origin: center bottom;
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  70% {
+    transform: rotate(3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================
+   CARD ANIMATIONS
+   ============================================ */
+.MuiCard-root {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.MuiCard-root:hover {
+  /* Hover effects disabled for cleaner look */
+}
+
+/* ============================================
+   PAPER ANIMATIONS
+   ============================================ */
+.MuiPaper-root {
+  transition: all 0.3s ease !important;
+}
+
+.MuiPaper-elevation:hover {
+  /* Hover effects disabled for cleaner look */
+}
+
+/* ============================================
+   BUTTON ANIMATIONS
+   ============================================ */
+.MuiButton-root {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.MuiButton-contained {
+  background: linear-gradient(135deg, #0088cc 0%, #00a8e8 100%) !important;
+}
+
+.MuiButton-contained:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 12px 35px rgba(0, 136, 204, 0.4) !important;
+  background: linear-gradient(135deg, #006699 0%, #0088cc 100%) !important;
+}
+
+.MuiButton-contained:active {
+  transform: translateY(0) scale(0.98) !important;
+}
+
+.MuiButton-outlined:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(0, 136, 204, 0.25) !important;
+  border-color: #0088cc !important;
+  background-color: rgba(0, 136, 204, 0.08) !important;
+}
+
+/* ============================================
+   ICON BUTTON ANIMATIONS
+   ============================================ */
+.MuiIconButton-root {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.MuiIconButton-root:hover {
+  transform: scale(1.2) rotate(8deg) !important;
+  background-color: rgba(0, 136, 204, 0.12) !important;
+  color: #0088cc !important;
+}
+
+/* ============================================
+   TABLE ANIMATIONS
+   ============================================ */
+.MuiTableRow-root {
+  transition: all 0.25s ease !important;
+}
+
+.MuiTableRow-root:hover {
+  background: linear-gradient(90deg, rgba(0, 136, 204, 0.1) 0%, rgba(0, 186, 209, 0.05) 100%) !important;
+  transform: scale(1.005);
+}
+
+.MuiTableBody-root .MuiTableRow-root {
+  animation: fadeIn 0.4s ease-out backwards;
+}
+
+.MuiTableBody-root .MuiTableRow-root:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.MuiTableBody-root .MuiTableRow-root:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.MuiTableBody-root .MuiTableRow-root:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.MuiTableBody-root .MuiTableRow-root:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.MuiTableBody-root .MuiTableRow-root:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.MuiTableBody-root .MuiTableRow-root:nth-child(6) {
+  animation-delay: 0.3s;
+}
+.MuiTableBody-root .MuiTableRow-root:nth-child(7) {
+  animation-delay: 0.35s;
+}
+.MuiTableBody-root .MuiTableRow-root:nth-child(8) {
+  animation-delay: 0.4s;
+}
+
+/* ============================================
+   INPUT FIELD ANIMATIONS
+   ============================================ */
+.MuiTextField-root .MuiOutlinedInput-root {
+  transition: all 0.3s ease !important;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root:hover {
+  transform: translateY(-2px);
+}
+
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 136, 204, 0.2);
+}
+
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #0088cc !important;
+  border-width: 2px !important;
+}
+
+/* ============================================
+   TAB ANIMATIONS
+   ============================================ */
+.MuiTabs-indicator {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  height: 3px !important;
+  border-radius: 3px 3px 0 0 !important;
+  background: linear-gradient(90deg, #0088cc, #00bad1) !important;
+}
+
+.MuiTab-root {
+  transition: all 0.3s ease !important;
+}
+
+.MuiTab-root:hover {
+  color: #0088cc !important;
+  background-color: rgba(0, 136, 204, 0.08) !important;
+  transform: translateY(-2px);
+}
+
+.MuiTab-root.Mui-selected {
+  color: #0088cc !important;
+  font-weight: 600 !important;
+}
+
+/* ============================================
+   CHIP ANIMATIONS
+   ============================================ */
+.MuiChip-root {
+  transition: all 0.3s ease !important;
+}
+
+.MuiChip-root:hover {
+  transform: scale(1.08) !important;
+  box-shadow: 0 6px 20px rgba(0, 136, 204, 0.25) !important;
+}
+
+/* ============================================
+   DIALOG ANIMATIONS
+   ============================================ */
+.MuiDialog-paper {
+  animation: scaleIn 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.MuiDialog-root .MuiBackdrop-root {
+  animation: fadeIn 0.25s ease-out !important;
+}
+
+/* ============================================
+   DRAWER ANIMATIONS
+   ============================================ */
+.MuiDrawer-paper {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* ============================================
+   ALERT ANIMATIONS
+   ============================================ */
+.MuiAlert-root {
+  animation: fadeInDown 0.4s ease-out !important;
+}
+
+/* ============================================
+   FAB ANIMATIONS
+   ============================================ */
+.MuiFab-root {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  background: linear-gradient(135deg, #0088cc 0%, #00a8e8 100%) !important;
+}
+
+.MuiFab-root:hover {
+  transform: scale(1.15) rotate(90deg) !important;
+  box-shadow: 0 12px 35px rgba(0, 136, 204, 0.5) !important;
+}
+
+/* ============================================
+   SKELETON SHIMMER
+   ============================================ */
+.MuiSkeleton-root {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 136, 204, 0.08) 25%,
+    rgba(0, 136, 204, 0.18) 50%,
+    rgba(0, 136, 204, 0.08) 75%
+  ) !important;
+  background-size: 200% 100% !important;
+  animation: shimmer 1.5s infinite !important;
+}
+
+/* ============================================
+   PROGRESS ANIMATIONS
+   ============================================ */
+.MuiLinearProgress-root {
+  overflow: hidden !important;
+  border-radius: 10px !important;
+}
+
+.MuiLinearProgress-bar {
+  background: linear-gradient(90deg, #0088cc, #00bad1, #0088cc) !important;
+  background-size: 200% 100% !important;
+  animation: shimmer 2s infinite !important;
+}
+
+.MuiCircularProgress-root {
+  color: #0088cc !important;
+}
+
+/* ============================================
+   SNACKBAR ANIMATIONS
+   ============================================ */
+.MuiSnackbar-root {
+  animation: slideInUp 0.4s ease-out !important;
+}
+
+/* ============================================
+   MENU ANIMATIONS
+   ============================================ */
+.MuiMenu-paper {
+  animation: fadeIn 0.25s ease-out !important;
+}
+
+/* ============================================
+   TOOLTIP ANIMATIONS
+   ============================================ */
+.MuiTooltip-tooltip {
+  animation: fadeIn 0.2s ease-out !important;
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%) !important;
+}
+
+/* ============================================
+   AVATAR ANIMATIONS
+   ============================================ */
+.MuiAvatar-root {
+  transition: all 0.3s ease !important;
+}
+
+.MuiAvatar-root:hover {
+  transform: scale(1.15) !important;
+  box-shadow: 0 8px 25px rgba(0, 136, 204, 0.35) !important;
+}
+
+/* ============================================
+   BADGE ANIMATIONS
+   ============================================ */
+.MuiBadge-badge {
+  animation: pulse 2s ease-in-out infinite !important;
+}
+
+/* ============================================
+   LIST ITEM ANIMATIONS
+   ============================================ */
+.MuiListItem-root,
+.MuiListItemButton-root {
+  transition: all 0.3s ease !important;
+}
+
+.MuiListItemButton-root:hover {
+  background: linear-gradient(90deg, rgba(0, 136, 204, 0.12) 0%, transparent 100%) !important;
+  padding-left: 24px !important;
+  border-left: 3px solid #0088cc !important;
+}
+
+/* ============================================
+   ACCORDION ANIMATIONS
+   ============================================ */
+.MuiAccordion-root {
+  transition: all 0.3s ease !important;
+}
+
+.MuiAccordion-root:hover {
+  box-shadow: 0 8px 30px rgba(0, 136, 204, 0.12) !important;
+}
+
+.MuiAccordionSummary-root:hover {
+  background-color: rgba(0, 136, 204, 0.06) !important;
+}
+
+/* ============================================
+   SWITCH ANIMATIONS
+   ============================================ */
+.MuiSwitch-thumb {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.MuiSwitch-root:hover .MuiSwitch-thumb {
+  box-shadow: 0 0 15px rgba(0, 136, 204, 0.6) !important;
+}
+
+.MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+  background: linear-gradient(90deg, #0088cc, #00bad1) !important;
+}
+
+/* ============================================
+   GRID STAGGER ANIMATIONS
+   ============================================ */
+.MuiGrid-item {
+  animation: fadeInUp 0.5s ease-out backwards;
+}
+
+.MuiGrid-container > .MuiGrid-item:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.MuiGrid-container > .MuiGrid-item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.MuiGrid-container > .MuiGrid-item:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.MuiGrid-container > .MuiGrid-item:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.MuiGrid-container > .MuiGrid-item:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.MuiGrid-container > .MuiGrid-item:nth-child(6) {
+  animation-delay: 0.3s;
+}
+
+/* ============================================
+   SIDEBAR NAVIGATION
+   ============================================ */
+.ts-vertical-nav-root .MuiListItemButton-root {
+  transition: all 0.3s ease !important;
+}
+
+.ts-vertical-nav-root .MuiListItemButton-root:hover {
+  background: linear-gradient(90deg, rgba(0, 136, 204, 0.15) 0%, transparent 100%) !important;
+  border-left: 4px solid #0088cc !important;
+  padding-left: 20px !important;
+}
+
+.ts-vertical-nav-root .MuiListItemButton-root.Mui-selected {
+  background: linear-gradient(90deg, rgba(0, 136, 204, 0.2) 0%, transparent 100%) !important;
+  border-left: 4px solid #0088cc !important;
+}
+
+/* ============================================
+   LOGO ANIMATIONS
+   ============================================ */
+.MuiToolbar-root img,
+nav img,
+header img {
+  transition: all 0.4s ease !important;
+}
+
+.MuiToolbar-root img:hover,
+nav img:hover,
+header img:hover {
+  transform: scale(1.08) !important;
+  filter: drop-shadow(0 0 15px rgba(0, 136, 204, 0.6)) !important;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 136, 204, 0.05);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0088cc, #00bad1);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #006699, #0088cc);
+}
+
+/* ============================================
+   SELECTION COLOR
+   ============================================ */
+::selection {
+  background-color: rgba(0, 136, 204, 0.35);
+  color: inherit;
+}
+
+/* ============================================
+   FOCUS VISIBLE
+   ============================================ */
+*:focus-visible {
+  outline: 2px solid #0088cc !important;
+  outline-offset: 2px !important;
+}
+
+/* ============================================
+   PAGE TRANSITIONS
+   ============================================ */
+main,
+[role='main'] {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* ============================================
+   VIEW-SPECIFIC ANIMATIONS
+   ============================================ */
+
+/* Dashboard Cards Animation */
+.MuiCardContent-root {
+  animation: fadeInUp 0.5s ease-out backwards;
+}
+
+/* Stats/KPI Numbers */
+h1,
+h2,
+h3,
+h4 {
+  animation: fadeIn 0.6s ease-out backwards;
+}
+
+/* Typography animations */
+.MuiTypography-h1,
+.MuiTypography-h2,
+.MuiTypography-h3,
+.MuiTypography-h4,
+.MuiTypography-h5,
+.MuiTypography-h6 {
+  animation: fadeInDown 0.5s ease-out backwards;
+}
+
+/* Data display animations */
+.MuiTypography-body1,
+.MuiTypography-body2 {
+  animation: fadeIn 0.4s ease-out backwards;
+}
+
+/* Form animations */
+form {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+form .MuiFormControl-root {
+  animation: fadeInUp 0.4s ease-out backwards;
+}
+
+form .MuiFormControl-root:nth-child(1) {
+  animation-delay: 0.05s;
+}
+form .MuiFormControl-root:nth-child(2) {
+  animation-delay: 0.1s;
+}
+form .MuiFormControl-root:nth-child(3) {
+  animation-delay: 0.15s;
+}
+form .MuiFormControl-root:nth-child(4) {
+  animation-delay: 0.2s;
+}
+form .MuiFormControl-root:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+/* Breadcrumbs animation */
+.MuiBreadcrumbs-root {
+  animation: fadeInLeft 0.4s ease-out;
+}
+
+/* Dividers with gradient */
+.MuiDivider-root {
+  background: linear-gradient(90deg, transparent, rgba(0, 136, 204, 0.3), transparent) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Select dropdowns */
+.MuiSelect-root {
+  transition: all 0.3s ease !important;
+}
+
+.MuiSelect-root:hover {
+  transform: translateY(-1px);
+}
+
+/* Pagination animations */
+.MuiPagination-root .MuiPaginationItem-root {
+  transition: all 0.25s ease !important;
+}
+
+.MuiPagination-root .MuiPaginationItem-root:hover {
+  transform: scale(1.15) !important;
+  background-color: rgba(0, 136, 204, 0.1) !important;
+}
+
+.MuiPagination-root .Mui-selected {
+  background: linear-gradient(135deg, #0088cc, #00a8e8) !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4) !important;
+}
+
+/* Stepper animations */
+.MuiStepper-root {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.MuiStep-root {
+  animation: fadeInUp 0.5s ease-out backwards;
+}
+
+.MuiStep-root:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.MuiStep-root:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.MuiStep-root:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.MuiStep-root:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.MuiStep-root:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.MuiStepIcon-root {
+  transition: all 0.3s ease !important;
+}
+
+.MuiStepIcon-root.Mui-active {
+  animation: pulse 1.5s ease-in-out infinite !important;
+  color: #0088cc !important;
+}
+
+.MuiStepIcon-root.Mui-completed {
+  color: #28c76f !important;
+  animation: scaleInBounce 0.5s ease-out !important;
+}
+
+/* Timeline animations */
+.MuiTimeline-root {
+  animation: fadeInLeft 0.5s ease-out;
+}
+
+.MuiTimelineItem-root {
+  animation: fadeInUp 0.4s ease-out backwards;
+}
+
+.MuiTimelineItem-root:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.MuiTimelineItem-root:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.MuiTimelineItem-root:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.MuiTimelineItem-root:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.MuiTimelineItem-root:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.MuiTimelineDot-root {
+  transition: all 0.3s ease !important;
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* Rating animations */
+.MuiRating-root .MuiRating-icon {
+  transition: all 0.2s ease !important;
+}
+
+.MuiRating-root .MuiRating-icon:hover {
+  transform: scale(1.3) rotate(15deg) !important;
+}
+
+.MuiRating-iconFilled {
+  color: #ffc107 !important;
+  filter: drop-shadow(0 2px 4px rgba(255, 193, 7, 0.4));
+}
+
+/* Slider animations */
+.MuiSlider-root {
+  transition: all 0.3s ease !important;
+}
+
+.MuiSlider-thumb {
+  transition: all 0.2s ease !important;
+}
+
+.MuiSlider-thumb:hover {
+  transform: scale(1.3) !important;
+  box-shadow: 0 0 15px rgba(0, 136, 204, 0.6) !important;
+}
+
+.MuiSlider-track {
+  background: linear-gradient(90deg, #0088cc, #00bad1) !important;
+}
+
+/* Speed dial animations */
+.MuiSpeedDial-root {
+  animation: scaleInBounce 0.5s ease-out;
+}
+
+.MuiSpeedDialAction-fab {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.MuiSpeedDialAction-fab:hover {
+  transform: scale(1.2) !important;
+  background: linear-gradient(135deg, #0088cc, #00a8e8) !important;
+  color: white !important;
+}
+
+/* Image/Media animations */
+img {
+  transition: all 0.4s ease !important;
+}
+
+/* Data grid animations */
+.MuiDataGrid-root {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.MuiDataGrid-row {
+  transition: all 0.25s ease !important;
+}
+
+.MuiDataGrid-row:hover {
+  background: linear-gradient(90deg, rgba(0, 136, 204, 0.08) 0%, transparent 100%) !important;
+  transform: scale(1.002);
+}
+
+/* TreeView animations */
+.MuiTreeItem-root {
+  transition: all 0.25s ease !important;
+}
+
+.MuiTreeItem-content:hover {
+  background-color: rgba(0, 136, 204, 0.08) !important;
+}
+
+.MuiTreeItem-iconContainer svg {
+  transition: all 0.3s ease !important;
+}
+
+/* Toggle button animations */
+.MuiToggleButton-root {
+  transition: all 0.3s ease !important;
+}
+
+.MuiToggleButton-root:hover {
+  transform: translateY(-2px) !important;
+}
+
+.MuiToggleButton-root.Mui-selected {
+  background: linear-gradient(135deg, #0088cc, #00a8e8) !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4) !important;
+}
+
+/* Number counter animation utility */
+.count-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Hover lift effect utility */
+.hover-lift {
+  transition: all 0.3s ease !important;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 25px rgba(0, 136, 204, 0.15) !important;
+}
+
+/* Hover scale utility */
+.hover-scale {
+  transition: all 0.3s ease !important;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05) !important;
+}
+
+/* Stagger animation utilities */
+.stagger-1 {
+  animation-delay: 0.05s !important;
+}
+.stagger-2 {
+  animation-delay: 0.1s !important;
+}
+.stagger-3 {
+  animation-delay: 0.15s !important;
+}
+.stagger-4 {
+  animation-delay: 0.2s !important;
+}
+.stagger-5 {
+  animation-delay: 0.25s !important;
+}
+.stagger-6 {
+  animation-delay: 0.3s !important;
+}
+.stagger-7 {
+  animation-delay: 0.35s !important;
+}
+.stagger-8 {
+  animation-delay: 0.4s !important;
+}
+
+/* Entrance animations */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+.animate-fade-in-down {
+  animation: fadeInDown 0.5s ease-out forwards;
+}
+.animate-fade-in-left {
+  animation: fadeInLeft 0.5s ease-out forwards;
+}
+.animate-fade-in-right {
+  animation: fadeInRight 0.5s ease-out forwards;
+}
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
+}
+.animate-scale-bounce {
+  animation: scaleInBounce 0.6s ease-out forwards;
+}
+.animate-slide-up {
+  animation: slideInUp 0.5s ease-out forwards;
+}
+.animate-slide-down {
+  animation: slideInDown 0.5s ease-out forwards;
+}
+.animate-flip-in {
+  animation: flipIn 0.6s ease-out forwards;
+}
+.animate-rotate-in {
+  animation: rotateIn 0.5s ease-out forwards;
+}
+
+/* Continuous animations */
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+.animate-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+}
+.animate-bounce {
+  animation: bounce 2s ease infinite;
+}
+.animate-heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+.animate-gradient {
+  animation: gradient-shift 3s ease infinite;
+  background-size: 200% 200%;
+}
+.animate-swing {
+  animation: swing 1s ease-in-out infinite;
+}
+.animate-rubberband {
+  animation: rubberBand 1s ease-in-out;
+}
+.animate-jello {
+  animation: jello 1s ease-in-out;
+}
+.animate-tada {
+  animation: tada 1s ease-in-out;
+}
+.animate-headshake {
+  animation: headShake 1s ease-in-out;
+}
+.animate-wobble {
+  animation: wobble 1s ease-in-out;
+}
+.animate-neon {
+  animation: neonFlicker 1.5s infinite alternate;
+}
+.animate-rainbow {
+  animation: rainbowGlow 3s infinite;
+}
+.animate-border-dance {
+  animation: borderDance 3s infinite;
+}
+.animate-morph {
+  animation: morphBlob 8s ease-in-out infinite;
+}
+
+/* Special entrance animations */
+.animate-zoom-in {
+  animation: zoomIn 0.5s ease-out forwards;
+}
+.animate-zoom-bounce {
+  animation: zoomInBounce 0.6s ease-out forwards;
+}
+.animate-light-speed {
+  animation: lightSpeedIn 0.8s ease-out forwards;
+}
+.animate-roll-in {
+  animation: rollIn 0.8s ease-out forwards;
+}
+.animate-flip-x {
+  animation: flipInX 0.8s ease-out forwards;
+}
+.animate-flip-y {
+  animation: flipInY 0.8s ease-out forwards;
+}
+.animate-rotate-in-left {
+  animation: rotateInDownLeft 0.6s ease-out forwards;
+}
+.animate-jack-in-box {
+  animation: jackInTheBox 0.8s ease-out forwards;
+}
+
+/* ============================================
+   ENHANCED CARD EFFECTS
+   ============================================ */
+.MuiCard-root {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  animation: fadeInUp 0.6s ease-out backwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.MuiCard-root::before {
+  /* Blue sweep effect disabled for cleaner look */
+  content: none;
+}
+
+.MuiCard-root:hover::before {
+  /* Hover sweep effect disabled */
+}
+
+/* Card hover effects disabled for cleaner look */
+
+/* ============================================
+   SUPER BUTTON EFFECTS
+   ============================================ */
+.MuiButton-root {
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.MuiButton-root::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.6s ease,
+    height 0.6s ease;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.MuiButton-root:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.MuiButton-contained {
+  background: linear-gradient(135deg, #0088cc 0%, #00a8e8 50%, #00bad1 100%) !important;
+  background-size: 200% 200% !important;
+  animation: gradient-shift 4s ease infinite !important;
+}
+
+.MuiButton-contained:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow:
+    0 10px 30px rgba(0, 136, 204, 0.4),
+    0 0 15px rgba(0, 136, 204, 0.2) !important;
+}
+
+.MuiButton-contained:active {
+  transform: translateY(-2px) scale(1.02) !important;
+  animation: rubberBand 0.4s ease !important;
+}
+
+/* ============================================
+   MEGA TABLE ANIMATIONS
+   ============================================ */
+.MuiTableHead-root {
+  background: linear-gradient(135deg, rgba(0, 136, 204, 0.08) 0%, rgba(0, 186, 209, 0.05) 100%) !important;
+}
+
+.MuiTableHead-root .MuiTableCell-root {
+  font-weight: 700 !important;
+  color: #0088cc !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.MuiTableRow-root {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+}
+
+.MuiTableRow-root::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #0088cc, #00bad1);
+  transition: width 0.3s ease;
+}
+
+.MuiTableRow-root:hover::after {
+  width: 100%;
+}
+
+.MuiTableRow-root:hover {
+  background: linear-gradient(90deg, rgba(0, 136, 204, 0.12) 0%, rgba(0, 186, 209, 0.06) 100%) !important;
+  transform: scale(1.008) translateX(5px);
+  box-shadow: 0 4px 20px rgba(0, 136, 204, 0.1);
+}
+
+/* ============================================
+   ULTRA INPUT EFFECTS
+   ============================================ */
+.MuiTextField-root .MuiOutlinedInput-root {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, transparent, transparent);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: background 0.3s ease;
+  pointer-events: none;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root:hover::before,
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused::before {
+  background: linear-gradient(135deg, #0088cc, #00bad1, #28c76f, #0088cc);
+  background-size: 300% 300%;
+  animation: gradient-shift 2s ease infinite;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 136, 204, 0.15);
+}
+
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0, 136, 204, 0.25);
+}
+
+/* ============================================
+   SPECTACULAR ICON BUTTONS
+   ============================================ */
+.MuiIconButton-root {
+  transition: all 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+  position: relative;
+}
+
+.MuiIconButton-root::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 136, 204, 0.2) 0%, transparent 70%);
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.MuiIconButton-root:hover::after {
+  transform: scale(2);
+}
+
+.MuiIconButton-root:hover {
+  transform: scale(1.25) rotate(15deg) !important;
+  color: #0088cc !important;
+}
+
+.MuiIconButton-root:active {
+  animation: jello 0.5s ease !important;
+}
+
+/* ============================================
+   AMAZING CHIP EFFECTS
+   ============================================ */
+.MuiChip-root {
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.MuiChip-root::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.4s ease;
+}
+
+.MuiChip-root:hover::before {
+  left: 100%;
+}
+
+.MuiChip-root:hover {
+  transform: scale(1.12) rotate(-3deg) !important;
+  box-shadow: 0 8px 25px rgba(0, 136, 204, 0.35) !important;
+}
+
+/* ============================================
+   IMPRESSIVE DIALOG EFFECTS
+   ============================================ */
+.MuiDialog-paper {
+  animation: zoomInBounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.MuiDialog-root .MuiBackdrop-root {
+  animation: fadeIn 0.3s ease-out !important;
+  backdrop-filter: blur(5px);
+}
+
+/* ============================================
+   DYNAMIC AVATAR EFFECTS
+   ============================================ */
+.MuiAvatar-root {
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+  position: relative;
+}
+
+.MuiAvatar-root::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.MuiAvatar-root:hover {
+  transform: scale(1.2) rotate(10deg) !important;
+  box-shadow: 0 10px 35px rgba(0, 136, 204, 0.45) !important;
+}
+
+.MuiAvatar-root:hover::after {
+  border-color: #0088cc;
+  animation: borderDance 2s infinite;
+}
+
+/* ============================================
+   PULSING BADGES
+   ============================================ */
+.MuiBadge-badge {
+  animation:
+    pulse 1.5s ease-in-out infinite,
+    rainbowGlow 4s infinite !important;
+}
+
+/* ============================================
+   SIDEBAR MEGA EFFECTS
+   ============================================ */
+.ts-vertical-nav-root .MuiListItemButton-root {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.ts-vertical-nav-root .MuiListItemButton-root::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #0088cc, #00bad1);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.ts-vertical-nav-root .MuiListItemButton-root:hover::before {
+  transform: scaleY(1);
+}
+
+.ts-vertical-nav-root .MuiListItemButton-root:hover {
+  background: linear-gradient(90deg, rgba(0, 136, 204, 0.18) 0%, transparent 100%) !important;
+  padding-left: 28px !important;
+  transform: translateX(5px);
+}
+
+.ts-vertical-nav-root .MuiListItemButton-root.Mui-selected {
+  background: linear-gradient(90deg, rgba(0, 136, 204, 0.25) 0%, transparent 100%) !important;
+}
+
+.ts-vertical-nav-root .MuiListItemButton-root.Mui-selected::before {
+  transform: scaleY(1);
+  animation: pulseGlow 2s infinite;
+}
+
+/* ============================================
+   COOL SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, rgba(0, 136, 204, 0.05), rgba(0, 186, 209, 0.05));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0088cc, #00bad1, #0088cc);
+  background-size: 100% 200%;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  animation: gradient-shift 3s ease infinite;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #006699, #0088cc, #006699);
+  background-size: 100% 200%;
+  animation: gradient-shift 1s ease infinite;
+}
+
+/* ============================================
+   GLOWING FOCUS STATES
+   ============================================ */
+*:focus-visible {
+  outline: none !important;
+  box-shadow:
+    0 0 0 3px rgba(0, 136, 204, 0.5),
+    0 0 20px rgba(0, 136, 204, 0.3) !important;
+  animation: pulseGlow 1.5s ease-in-out infinite !important;
+}
+
+/* ============================================
+   LOADING STATES
+   ============================================ */
+.MuiCircularProgress-root {
+  animation: rotate 1.4s linear infinite !important;
+}
+
+.MuiCircularProgress-root circle {
+  stroke: url(#gradient) !important;
+}
+
+.MuiLinearProgress-bar {
+  background: linear-gradient(90deg, #0088cc, #00bad1, #28c76f, #00bad1, #0088cc) !important;
+  background-size: 400% 100% !important;
+  animation: shimmer 2s linear infinite !important;
+}
+
+/* ============================================
+   HOVER UTILITY CLASSES
+   ============================================ */
+.hover-3d {
+  transition: all 0.4s ease !important;
+  transform-style: preserve-3d;
+}
+
+.hover-3d:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg) translateZ(20px) !important;
+  box-shadow: -15px 15px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.hover-underline {
+  position: relative;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #0088cc, #00bad1);
+  transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Special text effects */
+.text-gradient-animated {
+  background: linear-gradient(135deg, #0088cc, #00bad1, #28c76f, #ff9f43, #0088cc);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textGradient 4s ease infinite;
+}
+
+/* ============================================
+   GRADIENT UTILITIES
+   ============================================ */
+.gradient-text {
+  background: linear-gradient(135deg, #0088cc 0%, #00bad1 50%, #28c76f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #0088cc 0%, #00bad1 100%);
+}
+
+.gradient-bg-animated {
+  background: linear-gradient(135deg, #0088cc 0%, #00bad1 50%, #0088cc 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.hover-glow:hover {
+  box-shadow:
+    0 0 30px rgba(0, 136, 204, 0.5),
+    0 0 60px rgba(0, 136, 204, 0.3) !important;
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+.pulse-animation {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ============================================
+   ANIMATED COUNT NUMBER STYLES
+   ============================================ */
+@keyframes countPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 0 transparent;
+  }
+  50% {
+    transform: scale(1.02);
+    text-shadow: 0 0 20px rgba(30, 136, 229, 0.3);
+  }
+}
+
+@keyframes numberGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px rgba(30, 136, 229, 0.3);
+  }
+  50% {
+    text-shadow:
+      0 0 15px rgba(30, 136, 229, 0.6),
+      0 0 25px rgba(30, 136, 229, 0.4);
+  }
+}
+
+.count-up-number {
+  display: inline-block;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  transition: all 0.3s ease;
+}
+
+.count-up-number:hover {
+  animation: countPulse 0.5s ease;
+}
+
+/* ============================================
+   FUNCTION-BASED CARD COLORS (Stats Cards)
+   ============================================ */
+/* Incoming/Revenue/Positive Cards - Green Theme */
+.stat-card-incoming,
+.stat-card-revenue,
+.stat-card-success,
+.stat-card-positive {
+  background: linear-gradient(135deg, rgba(40, 199, 111, 0.08) 0%, rgba(40, 199, 111, 0.02) 100%) !important;
+  border-left: 4px solid #28c76f !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.stat-card-incoming:hover,
+.stat-card-revenue:hover,
+.stat-card-success:hover,
+.stat-card-positive:hover {
+  /* Hover effects disabled for cleaner look */
+}
+
+.stat-card-incoming .stat-icon,
+.stat-card-revenue .stat-icon,
+.stat-card-success .stat-icon,
+.stat-card-positive .stat-icon {
+  background: linear-gradient(135deg, #28c76f, #48da89) !important;
+  color: white !important;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Outgoing/Expense/Negative Cards - Red Theme */
+.stat-card-outgoing,
+.stat-card-expense,
+.stat-card-error,
+.stat-card-negative {
+  background: linear-gradient(135deg, rgba(255, 76, 81, 0.08) 0%, rgba(255, 76, 81, 0.02) 100%) !important;
+  border-left: 4px solid #ff4c51 !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.stat-card-outgoing:hover,
+.stat-card-expense:hover,
+.stat-card-error:hover,
+.stat-card-negative:hover {
+  /* Hover effects disabled for cleaner look */
+}
+
+.stat-card-outgoing .stat-icon,
+.stat-card-expense .stat-icon,
+.stat-card-error .stat-icon,
+.stat-card-negative .stat-icon {
+  background: linear-gradient(135deg, #ff4c51, #ff7074) !important;
+  color: white !important;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Balance/Total/Summary Cards - Blue Theme */
+.stat-card-balance,
+.stat-card-total,
+.stat-card-primary,
+.stat-card-summary {
+  background: linear-gradient(135deg, rgba(30, 136, 229, 0.08) 0%, rgba(30, 136, 229, 0.02) 100%) !important;
+  border-left: 4px solid #1e88e5 !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.stat-card-balance:hover,
+.stat-card-total:hover,
+.stat-card-primary:hover,
+.stat-card-summary:hover {
+  /* Hover effects disabled for cleaner look */
+}
+
+.stat-card-balance .stat-icon,
+.stat-card-total .stat-icon,
+.stat-card-primary .stat-icon,
+.stat-card-summary .stat-icon {
+  background: linear-gradient(135deg, #1e88e5, #42a5f5) !important;
+  color: white !important;
+  animation: floatRotate 4s ease-in-out infinite;
+}
+
+/* Info/Warning/Cash Cards - Orange/Gold Theme */
+.stat-card-warning,
+.stat-card-cash,
+.stat-card-pending {
+  background: linear-gradient(135deg, rgba(255, 159, 67, 0.08) 0%, rgba(255, 159, 67, 0.02) 100%) !important;
+  border-left: 4px solid #ff9f43 !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.stat-card-warning:hover,
+.stat-card-cash:hover,
+.stat-card-pending:hover {
+  /* Hover effects disabled for cleaner look */
+}
+
+.stat-card-warning .stat-icon,
+.stat-card-cash .stat-icon,
+.stat-card-pending .stat-icon {
+  background: linear-gradient(135deg, #ff9f43, #ffb269) !important;
+  color: white !important;
+  animation: wiggle 2s ease-in-out infinite;
+}
+
+/* Info/Transfer Cards - Cyan Theme */
+.stat-card-info,
+.stat-card-transfer,
+.stat-card-secondary {
+  background: linear-gradient(135deg, rgba(0, 186, 209, 0.08) 0%, rgba(0, 186, 209, 0.02) 100%) !important;
+  border-left: 4px solid #00bad1 !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.stat-card-info:hover,
+.stat-card-transfer:hover,
+.stat-card-secondary:hover {
+  /* Hover effects disabled for cleaner look */
+}
+
+.stat-card-info .stat-icon,
+.stat-card-transfer .stat-icon,
+.stat-card-secondary .stat-icon {
+  background: linear-gradient(135deg, #00bad1, #33c8da) !important;
+  color: white !important;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* Stock/Inventory Cards - Purple Theme */
+.stat-card-stock,
+.stat-card-inventory,
+.stat-card-products {
+  background: linear-gradient(135deg, rgba(115, 103, 240, 0.08) 0%, rgba(115, 103, 240, 0.02) 100%) !important;
+  border-left: 4px solid #7367f0 !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.stat-card-stock:hover,
+.stat-card-inventory:hover,
+.stat-card-products:hover {
+  /* Hover effects disabled for cleaner look */
+}
+
+.stat-card-stock .stat-icon,
+.stat-card-inventory .stat-icon,
+.stat-card-products .stat-icon {
+  background: linear-gradient(135deg, #7367f0, #9e95f5) !important;
+  color: white !important;
+  animation: float 3.5s ease-in-out infinite;
+}
+
+/* ============================================
+   FUNCTION-BASED BUTTON COLORS
+   ============================================ */
+/* Add/Create/Submit - Green Action Buttons */
+.btn-action-add,
+.btn-action-create,
+.btn-action-submit,
+.btn-action-save,
+.btn-action-confirm {
+  background: linear-gradient(135deg, #28c76f 0%, #48da89 100%) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(40, 199, 111, 0.35) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-action-add:hover,
+.btn-action-create:hover,
+.btn-action-submit:hover,
+.btn-action-save:hover,
+.btn-action-confirm:hover {
+  background: linear-gradient(135deg, #24b364 0%, #28c76f 100%) !important;
+  box-shadow:
+    0 6px 20px rgba(40, 199, 111, 0.45),
+    0 0 30px rgba(40, 199, 111, 0.2) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+.btn-action-add:active,
+.btn-action-create:active,
+.btn-action-submit:active,
+.btn-action-save:active,
+.btn-action-confirm:active {
+  transform: translateY(0) scale(0.98) !important;
+}
+
+/* Delete/Remove/Cancel - Red Action Buttons */
+.btn-action-delete,
+.btn-action-remove,
+.btn-action-cancel,
+.btn-action-reject {
+  background: linear-gradient(135deg, #ff4c51 0%, #ff7074 100%) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(255, 76, 81, 0.35) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-action-delete:hover,
+.btn-action-remove:hover,
+.btn-action-cancel:hover,
+.btn-action-reject:hover {
+  background: linear-gradient(135deg, #e64449 0%, #ff4c51 100%) !important;
+  box-shadow:
+    0 6px 20px rgba(255, 76, 81, 0.45),
+    0 0 30px rgba(255, 76, 81, 0.2) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* Edit/Update/Modify - Blue Action Buttons */
+.btn-action-edit,
+.btn-action-update,
+.btn-action-modify {
+  background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 100%) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(30, 136, 229, 0.35) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-action-edit:hover,
+.btn-action-update:hover,
+.btn-action-modify:hover {
+  background: linear-gradient(135deg, #1565c0 0%, #1e88e5 100%) !important;
+  box-shadow:
+    0 6px 20px rgba(30, 136, 229, 0.45),
+    0 0 30px rgba(30, 136, 229, 0.2) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* View/Info/Details - Cyan Action Buttons */
+.btn-action-view,
+.btn-action-info,
+.btn-action-details,
+.btn-action-preview {
+  background: linear-gradient(135deg, #00bad1 0%, #33c8da 100%) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(0, 186, 209, 0.35) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-action-view:hover,
+.btn-action-info:hover,
+.btn-action-details:hover,
+.btn-action-preview:hover {
+  background: linear-gradient(135deg, #00a7bc 0%, #00bad1 100%) !important;
+  box-shadow:
+    0 6px 20px rgba(0, 186, 209, 0.45),
+    0 0 30px rgba(0, 186, 209, 0.2) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* Download/Export - Orange Action Buttons */
+.btn-action-download,
+.btn-action-export,
+.btn-action-print {
+  background: linear-gradient(135deg, #ff9f43 0%, #ffb269 100%) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(255, 159, 67, 0.35) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-action-download:hover,
+.btn-action-export:hover,
+.btn-action-print:hover {
+  background: linear-gradient(135deg, #e68f3c 0%, #ff9f43 100%) !important;
+  box-shadow:
+    0 6px 20px rgba(255, 159, 67, 0.45),
+    0 0 30px rgba(255, 159, 67, 0.2) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* Filter/Search - Purple Action Buttons */
+.btn-action-filter,
+.btn-action-search,
+.btn-action-find {
+  background: linear-gradient(135deg, #7367f0 0%, #9e95f5 100%) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(115, 103, 240, 0.35) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-action-filter:hover,
+.btn-action-search:hover,
+.btn-action-find:hover {
+  background: linear-gradient(135deg, #5e50ee 0%, #7367f0 100%) !important;
+  box-shadow:
+    0 6px 20px rgba(115, 103, 240, 0.45),
+    0 0 30px rgba(115, 103, 240, 0.2) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* Reset/Clear - Gray Action Buttons */
+.btn-action-reset,
+.btn-action-clear {
+  background: linear-gradient(135deg, #808390 0%, #999ca6 100%) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(128, 131, 144, 0.35) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-action-reset:hover,
+.btn-action-clear:hover {
+  background: linear-gradient(135deg, #737682 0%, #808390 100%) !important;
+  box-shadow: 0 6px 20px rgba(128, 131, 144, 0.45) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* Invoice/Payment - Teal Action Buttons */
+.btn-action-invoice,
+.btn-action-payment,
+.btn-action-pay {
+  background: linear-gradient(135deg, #009688 0%, #26a69a 100%) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(0, 150, 136, 0.35) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-action-invoice:hover,
+.btn-action-payment:hover,
+.btn-action-pay:hover {
+  background: linear-gradient(135deg, #00796b 0%, #009688 100%) !important;
+  box-shadow:
+    0 6px 20px rgba(0, 150, 136, 0.45),
+    0 0 30px rgba(0, 150, 136, 0.2) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* ============================================
+   STAT VALUE NUMBER ANIMATIONS
+   ============================================ */
+.stat-value {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.stat-value::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #1e88e5, #42a5f5);
+  transition: width 0.3s ease;
+}
+
+.stat-value:hover::after {
+  width: 100%;
+}
+
+.stat-value:hover {
+  color: #1e88e5 !important;
+  text-shadow: 0 0 10px rgba(30, 136, 229, 0.3);
+}
+
+/* Animated number highlight effect */
+@keyframes numberHighlight {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.number-highlight {
+  background: linear-gradient(90deg, transparent 0%, rgba(30, 136, 229, 0.1) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: numberHighlight 2s ease-in-out infinite;
+}
+
+/* ============================================
+   CARD INDEX INDICATORS (Stagger Animation)
+   ============================================ */
+.card-index-1,
+.card-index-2,
+.card-index-3,
+.card-index-4,
+.card-index-5,
+.card-index-6 {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.card-index-1:hover,
+.card-index-2:hover,
+.card-index-3:hover,
+.card-index-4:hover,
+.card-index-5:hover,
+.card-index-6:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-index-1 {
+  animation-delay: 0s !important;
+}
+
+.card-index-2 {
+  animation-delay: 0.1s !important;
+}
+
+.card-index-3 {
+  animation-delay: 0.2s !important;
+}
+
+.card-index-4 {
+  animation-delay: 0.3s !important;
+}
+
+.card-index-5 {
+  animation-delay: 0.4s !important;
+}
+
+.card-index-6 {
+  animation-delay: 0.5s !important;
+}
+
+/* ============================================
+   ANIMATION UTILITY CLASSES
+   ============================================ */
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.6s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+.animate-bounce {
+  animation: bounce 1s ease infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+/* Dashboard specific animations */
+.dashboard-card {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.dashboard-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.dashboard-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.dashboard-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.dashboard-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.dashboard-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.dashboard-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Quick action hover effects */
+.quick-action {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quick-action:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ============================================
+   REDUCED MOTION SUPPORT
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

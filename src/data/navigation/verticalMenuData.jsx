@@ -1,0 +1,127 @@
+const verticalMenuData = () => [
+  {
+    label: 'الرئيسية',
+    href: '/home',
+    icon: 'tabler-smart-home'
+  },
+  {
+    label: 'الأرشيف',
+    href: '/projects',
+    icon: 'tabler-archive',
+    children: [
+      {
+        label: 'أرشيف العملاء',
+        href: '/projects',
+        icon: 'tabler-users'
+      },
+      {
+        label: 'مستكشف العملاء',
+        href: '/projects/explorer',
+        icon: 'tabler-folder-search'
+      }
+    ]
+  },
+  {
+    label: 'الخزينة',
+    href: '/the-safe',
+    icon: 'tabler-navigation-dollar',
+    children: [
+      {
+        label: 'الخزنة الشخصية',
+        href: '/the-safe/personal',
+        icon: 'tabler-user'
+      },
+      {
+        label: 'المحفظة',
+        href: '/wallet',
+        icon: 'tabler-wallet'
+      }
+    ]
+  },
+  {
+    label: 'المخزون',
+    href: '/inventory',
+    icon: 'tabler-box',
+    children: [
+      {
+        label: 'مواد المصنع',
+        href: '/inventory/factory',
+        icon: 'tabler-stack'
+      },
+      {
+        label: 'مواد العملاء',
+        href: '/inventory/client',
+        icon: 'tabler-briefcase'
+      },
+      {
+        label: 'مخزن وارد تشغيل',
+        href: '/inventory/operating-stock',
+        icon: 'tabler-building-factory-2'
+      }
+    ]
+  },
+  {
+    label: 'الموردين',
+    href: '/suppliers',
+    icon: 'tabler-building-warehouse'
+  },
+  {
+    label: 'العملاء',
+    href: '/clients',
+    icon: 'tabler-user-check'
+  },
+  {
+    label: 'الفواتير',
+    href: '/invoices',
+    icon: 'tabler-file-invoice'
+  },
+  {
+    label: 'قوائم الأسعار',
+    href: '/price-list',
+    icon: 'tabler-list-details'
+  },
+  {
+    label: 'التقارير',
+    href: '/reports',
+    icon: 'tabler-report-analytics'
+  },
+  {
+    label: 'لوحة الإدارة',
+    href: '/admin',
+    icon: 'tabler-shield-lock',
+    children: [
+      {
+        label: 'نظرة عامة',
+        href: '/admin',
+        icon: 'tabler-dashboard'
+      },
+      {
+        label: 'إدارة المستخدمين',
+        href: '/admin/users',
+        icon: 'tabler-users-group'
+      },
+      {
+        label: 'الأدوار والصلاحيات',
+        href: '/admin/roles',
+        icon: 'tabler-lock-access'
+      },
+      {
+        label: 'إدارة الصلاحيات',
+        href: '/admin/permissions',
+        icon: 'tabler-shield-check'
+      },
+      {
+        label: 'سجل الأنشطة',
+        href: '/admin/audit-logs',
+        icon: 'tabler-file-search'
+      },
+      {
+        label: 'النسخ الاحتياطي',
+        href: '/admin/backups',
+        icon: 'tabler-database-export'
+      }
+    ]
+  }
+]
+
+export default verticalMenuData
