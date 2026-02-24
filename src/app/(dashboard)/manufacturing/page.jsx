@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useInventoryClient } from '@views/inventory/useInventoryClient'
 import { useAuth } from '@core/contexts/authContext'
@@ -1030,7 +1030,13 @@ const ManufacturingPage = () => {
   )
 }
 
-export default ManufacturingPage
+export default function ManufacturingPageWrapper() {
+  return (
+    <Suspense fallback={<div>جاري التحميل...</div>}>
+      <ManufacturingPage />
+    </Suspense>
+  )
+}
 
 // Row Component for Grouping
 function GroupRow({ group, onFinish, onDetails, onDelete, onJobOrder, getWeight, status = 'pending' }) {
