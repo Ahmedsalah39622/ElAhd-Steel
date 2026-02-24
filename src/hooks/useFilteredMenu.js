@@ -6,6 +6,12 @@ import { canAccessRoute } from '@/utils/permissions'
 const getFilteredMenu = (menuData, userPermissions, isAdmin, visibleMenuItems) => {
   if (!menuData || !Array.isArray(menuData)) return []
 
+  // Helper: check if an item's permissionKey is satisfied
+  const hasPermissionKey = (item) => {
+    if (!item.permissionKey) return true // no key = always visible
+    return userPermissions.includes(item.permissionKey)
+  }
+
   return menuData
     .map(item => {
       // الأدمن يرى كل الصفحات دائماً
@@ -19,6 +25,18 @@ const getFilteredMenu = (menuData, userPermissions, isAdmin, visibleMenuItems) =
         }
 
         return item
+      }
+
+      // التحقق من permissionKey (مثل manufacturing)
+      if (!hasPermissionKey(item)) return null
+
+      // إذا كان العنصر يحتوي على عناصر فرعية، تصفيتها أيضاً حسب permissionKey
+      if (item.children) {
+        item = {
+          ...item,
+          children: item.children.filter(child => hasPermissionKey(child))
+        }
+        if (item.children.length === 0) return null
       }
 
       // التحقق من الصلاحية للعنصر الحالي
