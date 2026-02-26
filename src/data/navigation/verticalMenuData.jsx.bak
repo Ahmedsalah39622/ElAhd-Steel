@@ -61,11 +61,6 @@ const verticalMenuData = () => [
     ]
   },
   {
-    label: 'إدارة التشغيل',
-    href: '/manufacturing',
-    icon: 'tabler-settings-automation'
-  },
-  {
     label: 'الموردين',
     href: '/suppliers',
     icon: 'tabler-building-warehouse'

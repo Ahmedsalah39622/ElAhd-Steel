@@ -56,8 +56,7 @@ const verticalMenuData = () => [
       {
         label: 'مخزن وارد تشغيل',
         href: '/inventory/operating-stock',
-        icon: 'tabler-building-factory-2',
-        permissionKey: 'manufacturing'
+        icon: 'tabler-building-factory-2'
       }
     ]
   },

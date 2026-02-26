@@ -13,7 +13,7 @@ import '@/app/animations.css'
 
 export const metadata = {
   title: 'Ahd',
-  description: 'القاهرة',
+  description: 'Qalyub - Al-Batti Road - Al-Shandawily Street - next to Al-Rehab Mosque, Qalyub, Egypt',
   keywords: ['Ahd Steel', 'System', 'حديد', 'صلب', 'نظام إدارة'],
   icons: {
     icon: '/images/logos/company-favicon.png',
