@@ -2356,7 +2356,7 @@ export default function TheSafe({ personalOnly = false }) {
                 </FormControl>
               </Grid>
               <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                {(form.entryType === 'client-payment' || form.entryType === 'client-credit') ? (
+                {form.entryType === 'client-payment' || form.entryType === 'client-credit' ? (
                   <FormControl fullWidth required>
                     <InputLabel>العميل</InputLabel>
                     <Select name='clientId' value={form.clientId} onChange={handleChange} label='العميل'>
@@ -2418,7 +2418,9 @@ export default function TheSafe({ personalOnly = false }) {
             {/* Incoming & Outgoing */}
             <Grid container spacing={4}>
               {/* Incoming Section - Show for general and client-payment */}
-              {(form.entryType === 'general' || form.entryType === 'client-payment' || form.entryType === 'client-credit') && (
+              {(form.entryType === 'general' ||
+                form.entryType === 'client-payment' ||
+                form.entryType === 'client-credit') && (
                 <Grid size={{ xs: 12, md: form.entryType === 'general' ? 6 : 12 }}>
                   <Card variant='outlined' className='h-full' sx={{ bgcolor: 'success.lighter' }}>
                     <CardContent>

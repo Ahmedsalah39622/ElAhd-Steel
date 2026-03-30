@@ -11,29 +11,32 @@ async function handler(req, res) {
       })
 
       // Calculate balance for each supplier
-      const suppliersWithBalance = await Promise.all(suppliers.map(async s => {
-        const obj = s.get ? s.get({ plain: true }) : s
+      const suppliersWithBalance = await Promise.all(
+        suppliers.map(async s => {
+          const obj = s.get ? s.get({ plain: true }) : s
 
-        // Calculate supplier balance
-        try {
-          const totalPurchases = await PurchaseOrder.sum('totalAmount', { where: { supplierId: obj.id } }) || 0
-          const totalPaidFromOrders = await PurchaseOrder.sum('paidAmount', { where: { supplierId: obj.id } }) || 0
-          const totalPayments = await SafeEntry.sum('outgoing', {
-            where: {
-              supplierId: obj.id,
-              entryType: 'supplier-payment'
-            }
-          }) || 0
-          obj.balance = Number(totalPurchases) - Number(totalPaidFromOrders) - Number(totalPayments)
-          obj.hasDebt = obj.balance > 0
-        } catch (balanceErr) {
-          console.error('Error calculating balance for supplier:', obj.id, balanceErr)
-          obj.balance = 0
-          obj.hasDebt = false
-        }
+          // Calculate supplier balance
+          try {
+            const totalPurchases = (await PurchaseOrder.sum('totalAmount', { where: { supplierId: obj.id } })) || 0
+            const totalPaidFromOrders = (await PurchaseOrder.sum('paidAmount', { where: { supplierId: obj.id } })) || 0
+            const totalPayments =
+              (await SafeEntry.sum('outgoing', {
+                where: {
+                  supplierId: obj.id,
+                  entryType: 'supplier-payment'
+                }
+              })) || 0
+            obj.balance = Number(totalPurchases) - Number(totalPaidFromOrders) - Number(totalPayments)
+            obj.hasDebt = obj.balance > 0
+          } catch (balanceErr) {
+            console.error('Error calculating balance for supplier:', obj.id, balanceErr)
+            obj.balance = 0
+            obj.hasDebt = false
+          }
 
-        return obj
-      }))
+          return obj
+        })
+      )
 
       res.status(200).json({
         success: true,

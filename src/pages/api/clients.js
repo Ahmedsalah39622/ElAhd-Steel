@@ -9,34 +9,37 @@ async function handler(req, res) {
       const clients = await Client.findAll({ order: [['createdAt', 'DESC']] })
 
       // Parse material field and calculate balance for each client
-      const parsed = await Promise.all(clients.map(async c => {
-        const obj = c.get ? c.get({ plain: true }) : c
-        try {
-          obj.material = obj.material ? JSON.parse(obj.material) : []
-        } catch (e) {
-          // keep original string if not JSON
-        }
+      const parsed = await Promise.all(
+        clients.map(async c => {
+          const obj = c.get ? c.get({ plain: true }) : c
+          try {
+            obj.material = obj.material ? JSON.parse(obj.material) : []
+          } catch (e) {
+            // keep original string if not JSON
+          }
 
-        // Calculate client balance
-        try {
-          const totalInvoices = await Invoice.sum('total', { where: { clientId: obj.id } }) || 0
-          const totalPaidFromInvoices = await Invoice.sum('paidAmount', { where: { clientId: obj.id } }) || 0
-          const totalPayments = await SafeEntry.sum('incoming', {
-            where: {
-              clientId: obj.id,
-              entryType: 'client-payment'
-            }
-          }) || 0
-          obj.balance = Number(totalInvoices) - Number(totalPaidFromInvoices) - Number(totalPayments)
-          obj.hasDebt = obj.balance > 0
-        } catch (balanceErr) {
-          console.error('Error calculating balance for client:', obj.id, balanceErr)
-          obj.balance = 0
-          obj.hasDebt = false
-        }
+          // Calculate client balance
+          try {
+            const totalInvoices = (await Invoice.sum('total', { where: { clientId: obj.id } })) || 0
+            const totalPaidFromInvoices = (await Invoice.sum('paidAmount', { where: { clientId: obj.id } })) || 0
+            const totalPayments =
+              (await SafeEntry.sum('incoming', {
+                where: {
+                  clientId: obj.id,
+                  entryType: 'client-payment'
+                }
+              })) || 0
+            obj.balance = Number(totalInvoices) - Number(totalPaidFromInvoices) - Number(totalPayments)
+            obj.hasDebt = obj.balance > 0
+          } catch (balanceErr) {
+            console.error('Error calculating balance for client:', obj.id, balanceErr)
+            obj.balance = 0
+            obj.hasDebt = false
+          }
 
-        return obj
-      }))
+          return obj
+        })
+      )
 
       res.status(200).json({ success: true, data: parsed, message: 'Clients retrieved successfully' })
     } catch (error) {
@@ -55,16 +58,16 @@ async function handler(req, res) {
       const materialToSave = Array.isArray(material) ? JSON.stringify(material) : material
 
       // Sanitize inputs
-      const safeBudget = (budget === '' || budget === null) ? 0 : budget
-      const safePhone = (phone === '') ? null : phone
-      const safeProfile = (profile === '') ? null : profile
+      const safeBudget = budget === '' || budget === null ? 0 : budget
+      const safePhone = phone === '' ? null : phone
+      const safeProfile = profile === '' ? null : profile
 
-      const client = await Client.create({ 
-        name, 
-        phone: safePhone, 
-        profile: safeProfile, 
-        budget: safeBudget, 
-        material: materialToSave 
+      const client = await Client.create({
+        name,
+        phone: safePhone,
+        profile: safeProfile,
+        budget: safeBudget,
+        material: materialToSave
       })
 
       // return parsed material
@@ -92,20 +95,20 @@ async function handler(req, res) {
           let safeId = null
           const { Safe } = await initializeDatabase() // Check if Safe is returned
           if (Safe) {
-             const defaultSafe = await Safe.findOne({ where: { isDefault: true } })
-             if (defaultSafe) safeId = defaultSafe.id
+            const defaultSafe = await Safe.findOne({ where: { isDefault: true } })
+            if (defaultSafe) safeId = defaultSafe.id
           }
 
           if (safeId && SafeEntry) {
-              await SafeEntry.create({
-                date: new Date(),
-                description: `عربون تسجيل عميل ${out.name}`,
-                customer: out.name,
-                incoming: clientBudget,
-                entryType: 'incoming',
-                incomingMethod: 'client-registration-deposit',
-                safeId
-              })
+            await SafeEntry.create({
+              date: new Date(),
+              description: `عربون تسجيل عميل ${out.name}`,
+              customer: out.name,
+              incoming: clientBudget,
+              entryType: 'incoming',
+              incomingMethod: 'client-registration-deposit',
+              safeId
+            })
           }
         }
       } catch (seErr) {

@@ -28,7 +28,7 @@ async function handler(req, res) {
       order: [['createdAt', 'DESC']]
     })
 
-    const ordersPlain = purchaseOrders.map(po => po.get ? po.get({ plain: true }) : po)
+    const ordersPlain = purchaseOrders.map(po => (po.get ? po.get({ plain: true }) : po))
 
     // Get all payments (SafeEntry with this supplierId - outgoing)
     const payments = await SafeEntry.findAll({
