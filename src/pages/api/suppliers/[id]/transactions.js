@@ -40,7 +40,9 @@ async function handler(req, res) {
     // Calculate totals
     const totalPurchases = ordersPlain.reduce((sum, po) => sum + Number(po.totalAmount || 0), 0)
     const totalPaidOnOrders = ordersPlain.reduce((sum, po) => sum + Number(po.paidAmount || 0), 0)
-    const totalPayments = payments.reduce((sum, p) => sum + Number(p.outgoing || 0), 0)
+    const totalPayments = payments
+      .filter(p => p.entryType === 'supplier-payment')
+      .reduce((sum, p) => sum + Number(p.outgoing || 0), 0)
     const balance = totalPurchases - totalPaidOnOrders - totalPayments
 
     // Format transactions timeline

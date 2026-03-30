@@ -38,7 +38,9 @@ async function handler(req, res) {
     // Calculate totals
     const totalInvoices = invoices.reduce((sum, inv) => sum + Number(inv.total || 0), 0)
     const totalPaidOnInvoices = invoices.reduce((sum, inv) => sum + Number(inv.paidAmount || 0), 0)
-    const totalPayments = payments.reduce((sum, p) => sum + Number(p.incoming || 0), 0)
+    const totalPayments = payments
+      .filter(p => p.entryType === 'client-payment')
+      .reduce((sum, p) => sum + Number(p.incoming || 0), 0)
     const balance = totalInvoices - totalPaidOnInvoices - totalPayments
 
     // Format transactions timeline

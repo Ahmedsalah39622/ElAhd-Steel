@@ -21,7 +21,12 @@ async function handler(req, res) {
         try {
           const totalInvoices = await Invoice.sum('total', { where: { clientId: obj.id } }) || 0
           const totalPaidFromInvoices = await Invoice.sum('paidAmount', { where: { clientId: obj.id } }) || 0
-          const totalPayments = await SafeEntry.sum('incoming', { where: { clientId: obj.id } }) || 0
+          const totalPayments = await SafeEntry.sum('incoming', {
+            where: {
+              clientId: obj.id,
+              entryType: 'client-payment'
+            }
+          }) || 0
           obj.balance = Number(totalInvoices) - Number(totalPaidFromInvoices) - Number(totalPayments)
           obj.hasDebt = obj.balance > 0
         } catch (balanceErr) {

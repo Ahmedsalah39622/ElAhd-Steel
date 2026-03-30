@@ -822,43 +822,41 @@ export default function TheSafe({ personalOnly = false }) {
     loadForSelected()
   }, [selectedSafe])
 
-  // Fetch clients
-  useEffect(() => {
-    const fetchClients = async () => {
-      try {
-        const res = await fetch('/api/clients', { credentials: 'include' })
-        const data = await res.json()
+  const fetchClients = async () => {
+    try {
+      const res = await fetch('/api/clients', { credentials: 'include' })
+      const data = await res.json()
 
-        if (data.success) {
-          setClients(data.data || [])
-        } else if (Array.isArray(data)) {
-          setClients(data)
-        }
-      } catch (err) {
-        console.error('Error fetching clients:', err)
+      if (data.success) {
+        setClients(data.data || [])
+      } else if (Array.isArray(data)) {
+        setClients(data)
       }
+    } catch (err) {
+      console.error('Error fetching clients:', err)
     }
+  }
 
+  const fetchSuppliers = async () => {
+    try {
+      const res = await fetch('/api/suppliers', { credentials: 'include' })
+      const data = await res.json()
+
+      if (data.success) {
+        setSuppliers(data.data || [])
+      } else if (Array.isArray(data)) {
+        setSuppliers(data)
+      }
+    } catch (err) {
+      console.error('Error fetching suppliers:', err)
+    }
+  }
+
+  useEffect(() => {
     fetchClients()
   }, [])
 
-  // Fetch suppliers
   useEffect(() => {
-    const fetchSuppliers = async () => {
-      try {
-        const res = await fetch('/api/suppliers', { credentials: 'include' })
-        const data = await res.json()
-
-        if (data.success) {
-          setSuppliers(data.data || [])
-        } else if (Array.isArray(data)) {
-          setSuppliers(data)
-        }
-      } catch (err) {
-        console.error('Error fetching suppliers:', err)
-      }
-    }
-
     fetchSuppliers()
   }, [])
 
@@ -1131,7 +1129,7 @@ export default function TheSafe({ personalOnly = false }) {
           outgoingMethod: purchaseForm.paymentMethod,
           outgoingTxn: purchaseForm.transactionNumber || null,
           balance: -totalAmount,
-          entryType: 'outgoing',
+          entryType: 'purchase',
           safeId: null
         }
 
@@ -1172,6 +1170,7 @@ export default function TheSafe({ personalOnly = false }) {
       }
 
       setSuccess('تم تسجيل عملية الشراء بنجاح')
+      fetchSuppliers()
 
       // Reset form
       setPurchaseForm({
@@ -1238,6 +1237,68 @@ export default function TheSafe({ personalOnly = false }) {
       } else if (form.entryType === 'supplier-payment') {
         const supplier = suppliers.find(s => s.id === parseInt(form.supplierId))
         description = description || `دفعة للمورد: ${supplier?.name || 'مورد'}`
+      } else if (form.entryType === 'client-credit') {
+        const client = clients.find(c => c.id === parseInt(form.clientId))
+        description = description || `آجل عميل: ${client?.name || 'عميل'}`
+      }
+
+      const isClientCredit = form.entryType === 'client-credit'
+
+      if (isClientCredit) {
+        if (!form.clientId) {
+          setError('العميل مطلوب لإنشاء آجل للعميل')
+          setSubmitting(false)
+          return
+        }
+
+        const invoiceBody = {
+          number: `INV-${Date.now()}`,
+          clientId: parseInt(form.clientId),
+          date: form.date || new Date().toISOString().split('T')[0],
+          dueDate: null,
+          items: [],
+          total: incomingNum,
+          status: 'credit',
+          paidAmount: 0,
+          notes: description || null
+        }
+
+        const invRes = await fetch('/api/invoices', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify(invoiceBody)
+        })
+
+        const invData = await invRes.json()
+
+        if (invRes.ok) {
+          setSuccess('تم تسجيل آجل العميل بنجاح')
+          fetchClients()
+
+          setForm({
+            date: new Date().toISOString().split('T')[0],
+            month: months[new Date().getMonth()],
+            description: '',
+            project: '',
+            customer: '',
+            entryType: 'general',
+            clientId: '',
+            supplierId: '',
+            incoming: '',
+            incomingMethod: 'cash',
+            incomingTxn: '',
+            outgoing: '',
+            outgoingMethod: 'cash',
+            outgoingTxn: ''
+          })
+          setTimeout(() => setSuccess(null), 3000)
+        } else {
+          setError(invData.error || invData.message || 'حدث خطأ في إنشاء فاتورة الآجل')
+        }
+
+        setSubmitting(false)
+        return
       }
 
       const body = {
@@ -1255,7 +1316,11 @@ export default function TheSafe({ personalOnly = false }) {
         outgoingMethod: form.outgoingMethod || null,
         outgoingTxn: form.outgoingTxn || null,
         entryType:
-          form.entryType === 'client-payment' ? 'incoming' : form.entryType === 'supplier-payment' ? 'outgoing' : null,
+          form.entryType === 'client-payment'
+            ? 'client-payment'
+            : form.entryType === 'supplier-payment'
+              ? 'supplier-payment'
+              : 'general',
         balance
       }
 
@@ -1281,6 +1346,11 @@ export default function TheSafe({ personalOnly = false }) {
         const newEntry = data.data || data
 
         setEntries(prev => [...prev, newEntry])
+
+        if (form.entryType === 'client-payment') fetchClients()
+        if (form.entryType === 'supplier-payment' || form.entryType === 'general') fetchSuppliers()
+        if (form.entryType === 'client-payment' || form.entryType === 'general') fetchClients()
+
         setForm({
           date: new Date().toISOString().split('T')[0],
           month: months[new Date().getMonth()],
@@ -2244,6 +2314,12 @@ export default function TheSafe({ personalOnly = false }) {
                     sx={{ marginLeft: 0, marginRight: 0 }}
                   />
                   <FormControlLabel
+                    value='client-credit'
+                    control={<Radio color='warning' />}
+                    label='📝 آجال عميل'
+                    sx={{ marginLeft: 0, marginRight: 0 }}
+                  />
+                  <FormControlLabel
                     value='supplier-payment'
                     control={<Radio color='error' />}
                     label='💰 دفعة لمورد'
@@ -2280,7 +2356,7 @@ export default function TheSafe({ personalOnly = false }) {
                 </FormControl>
               </Grid>
               <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                {form.entryType === 'client-payment' ? (
+                {(form.entryType === 'client-payment' || form.entryType === 'client-credit') ? (
                   <FormControl fullWidth required>
                     <InputLabel>العميل</InputLabel>
                     <Select name='clientId' value={form.clientId} onChange={handleChange} label='العميل'>
@@ -2342,7 +2418,7 @@ export default function TheSafe({ personalOnly = false }) {
             {/* Incoming & Outgoing */}
             <Grid container spacing={4}>
               {/* Incoming Section - Show for general and client-payment */}
-              {(form.entryType === 'general' || form.entryType === 'client-payment') && (
+              {(form.entryType === 'general' || form.entryType === 'client-payment' || form.entryType === 'client-credit') && (
                 <Grid size={{ xs: 12, md: form.entryType === 'general' ? 6 : 12 }}>
                   <Card variant='outlined' className='h-full' sx={{ bgcolor: 'success.lighter' }}>
                     <CardContent>
@@ -2351,12 +2427,22 @@ export default function TheSafe({ personalOnly = false }) {
                           <i className='tabler-trending-up text-lg' />
                         </CustomAvatar>
                         <Typography variant='h6' color='success.main'>
-                          {form.entryType === 'client-payment' ? 'دفعة من العميل' : 'الوارد'}
+                          {form.entryType === 'client-payment'
+                            ? 'دفعة من العميل'
+                            : form.entryType === 'client-credit'
+                              ? 'آجل عميل'
+                              : 'الوارد'}
                         </Typography>
                       </div>
                       <TextField
                         fullWidth
-                        label={form.entryType === 'client-payment' ? 'مبلغ الدفعة' : 'مبلغ الوارد'}
+                        label={
+                          form.entryType === 'client-payment'
+                            ? 'مبلغ الدفعة'
+                            : form.entryType === 'client-credit'
+                              ? 'مبلغ الآجل'
+                              : 'مبلغ الوارد'
+                        }
                         name='incoming'
                         type='number'
                         value={form.incoming}
@@ -2367,7 +2453,7 @@ export default function TheSafe({ personalOnly = false }) {
                           endAdornment: <InputAdornment position='end'>ج.م</InputAdornment>
                         }}
                         className='mb-4'
-                        required={form.entryType === 'client-payment'}
+                        required={form.entryType === 'client-payment' || form.entryType === 'client-credit'}
                       />
                       <FormControl component='fieldset' className='mb-4'>
                         <FormLabel component='legend'>طريقة الدفع</FormLabel>
